@@ -11,6 +11,7 @@
   --surface-color: rgba(255, 255, 255, 0.05);  --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
+  --avatar-outline-color: 5px solid rgba(0, 0, 0, 0.6);
 }
 
 .light {
@@ -20,6 +21,7 @@
   --surface-color: rgba(0, 0, 0, 0.05);  --surface-color: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
+  --avatar-outline-color: 5px solid rgba(255, 255, 255, 0.85);
 }
 
 body {
@@ -50,12 +52,29 @@ body * {
 /* profile */
 
 #profile {
-  text-align: center;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
 }
 
-#profile img {
+#profile .gradient-outline {
+  display: flex;
+
+  background: linear-gradient(to left, rgba(255, 115, 0, 0.76), rgba(119, 0, 255, 0.658));
+  padding: 4px;
+
+  width: fit-content;
+  border-radius: 50%;
+
+}
+
+#profile .gradient-outline img {
   width: 112px;
+
+  border-radius: inherit;
+  border: var(--avatar-outline-color);
 }
 
 #profile p {
